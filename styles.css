@@ -65,7 +65,7 @@ body {
 .panel-left {
   width: var(--panel-width);
   flex-shrink: 0;
-  padding: 24px;
+  padding: clamp(16px, 3vh, 24px) 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,22 +74,22 @@ body {
 
 .logo img {
   display: block;
-  height: 28.875px;
+  height: clamp(20px, 3.6vh, 28.875px);
   width: auto;
 }
 
 .hero-copy {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(16px, 5vh, 40px);
   width: 100%;
 }
 
 .headline {
   font-family: 'Sancy Slab Trial', Georgia, serif;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 44px;
+  font-size: clamp(22px, 5vh, 40px);
+  line-height: clamp(26px, 5.5vh, 44px);
   letter-spacing: -0.4px;
   color: var(--white);
   margin: 0;
@@ -98,7 +98,7 @@ body {
 .signup {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: clamp(8px, 2vh, 16px);
   width: 100%;
 }
 
@@ -113,13 +113,13 @@ body {
 .signup-controls {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(4px, 1vh, 8px);
   width: 100%;
 }
 
 .input-wrap {
   border: 1px solid var(--white);
-  height: 52px;
+  height: clamp(40px, 6.5vh, 52px);
   display: flex;
   align-items: center;
   padding: 8px 16px 8px 15px;
@@ -143,7 +143,7 @@ body {
 .join-btn {
   background: var(--yellow);
   border: none;
-  height: 48px;
+  height: clamp(36px, 6vh, 48px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -183,9 +183,41 @@ body {
 
 .social {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
   align-items: center;
   gap: 16px;
   width: 100%;
+}
+
+.legal {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.copyright,
+.privacy-link {
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 10px;
+  color: #767474;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.privacy-link {
+  text-decoration: none;
+}
+
+.privacy-link:hover,
+.privacy-link:focus-visible {
+  text-decoration: underline;
 }
 
 .handle {
@@ -204,37 +236,15 @@ body {
   position: relative;
 }
 
-.icon-mask {
+.icon-svg {
   display: block;
-  width: 100%;
-  height: 100%;
-  background-color: var(--white);
-  transition: background-color 0.15s ease;
-  -webkit-mask-image: var(--mask-url);
-  mask-image: var(--mask-url);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  color: var(--white);
+  transition: color 0.15s ease;
 }
 
-.icon-link:hover .icon-mask,
-.icon-link:focus-visible .icon-mask {
-  background-color: var(--yellow);
-}
-
-.tiktok-base {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.icon-mask.tt {
-  position: absolute;
-  inset: 0;
+.icon-link:hover .icon-svg,
+.icon-link:focus-visible .icon-svg {
+  color: var(--yellow);
 }
 
 /* ---------- Right panel ---------- */
@@ -281,14 +291,14 @@ body {
 
   .panel-right {
     order: 2;
-    padding: 24px;
+    padding: 24px 24px 0 24px;
     height: 360px;
   }
 
   .hero-copy {
     order: 3;
-    padding: 32px 24px 0 24px;
-    gap: 32px;
+    padding: 28px 24px 0 24px;
+    gap: 24px;
   }
 
   .headline {
@@ -298,7 +308,7 @@ body {
 
   .social {
     order: 4;
-    padding: 32px 24px 24px 24px;
+    padding: 24px 24px 40px 24px;
   }
 }
 
