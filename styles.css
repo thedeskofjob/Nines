@@ -1,0 +1,314 @@
+@font-face {
+  font-family: 'Sancy Slab Trial';
+  src: url('assets/fonts/sancy-slab-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sancy Slab Trial';
+  src: url('assets/fonts/sancy-slab-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sancy Trial';
+  src: url('assets/fonts/sancy-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sancy Trial';
+  src: url('assets/fonts/sancy-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #191818;
+  --yellow: #f6ff00;
+  --white: #ffffff;
+  --placeholder: #9f9f9f;
+  --disclaimer: #a3a3a3;
+  --panel-width: 492px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--white);
+  height: 100%;
+}
+
+body {
+  font-family: 'Sancy Trial', Georgia, serif;
+}
+
+.page {
+  display: flex;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ---------- Left panel ---------- */
+
+.panel-left {
+  width: var(--panel-width);
+  flex-shrink: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo img {
+  display: block;
+  height: 28.875px;
+  width: auto;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.headline {
+  font-family: 'Sancy Slab Trial', Georgia, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -0.4px;
+  color: var(--white);
+  margin: 0;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.signup-label {
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  color: var(--white);
+  margin: 0;
+}
+
+.signup-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.input-wrap {
+  border: 1px solid var(--white);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 15px;
+}
+
+.input-wrap input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--white);
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 14.85px;
+}
+
+.input-wrap input::placeholder {
+  color: var(--placeholder);
+}
+
+.join-btn {
+  background: var(--yellow);
+  border: none;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 14.85px;
+  color: #000;
+  transition: opacity 0.15s ease;
+}
+
+.join-btn:hover {
+  opacity: 0.85;
+}
+
+.join-btn .arrow-icon {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.disclaimer {
+  color: var(--disclaimer);
+  font-size: 11px;
+  letter-spacing: 0.22px;
+  margin: 0;
+}
+
+.form-status {
+  margin: 0;
+  font-size: 12px;
+  min-height: 14px;
+  color: var(--yellow);
+}
+
+/* ---------- Social footer ---------- */
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.handle {
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: var(--white);
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.icon-mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  transition: background-color 0.15s ease;
+  -webkit-mask-image: var(--mask-url);
+  mask-image: var(--mask-url);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.icon-link:hover .icon-mask,
+.icon-link:focus-visible .icon-mask {
+  background-color: var(--yellow);
+}
+
+.tiktok-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-mask.tt {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- Right panel ---------- */
+
+.panel-right {
+  flex: 1 0 0;
+  min-width: 0;
+  padding: 24px 24px 24px 0;
+  display: flex;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  opacity: 0.9;
+  display: block;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  html, body {
+    height: auto;
+  }
+
+  .page {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Let panel-left's children become direct flex items of .page,
+     so the image can be reordered between the logo and the copy. */
+  .panel-left {
+    display: contents;
+  }
+
+  .logo {
+    order: 1;
+    padding: 24px 24px 0 24px;
+  }
+
+  .panel-right {
+    order: 2;
+    padding: 24px;
+    height: 360px;
+  }
+
+  .hero-copy {
+    order: 3;
+    padding: 32px 24px 0 24px;
+    gap: 32px;
+  }
+
+  .headline {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .social {
+    order: 4;
+    padding: 32px 24px 24px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .panel-right {
+    height: 280px;
+  }
+}
