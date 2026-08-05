@@ -74,7 +74,7 @@ body {
 
 .logo img {
   display: block;
-  height: clamp(26px, 4.68vh, 37.54px);
+  height: clamp(33.8px, 6.08vh, 48.8px);
   width: auto;
 }
 
@@ -112,8 +112,8 @@ body {
 
 .signup-subcopy {
   font-family: 'Sancy Trial', Georgia, serif;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 14.85px;
+  line-height: 20px;
   letter-spacing: 0.4px;
   color: var(--white);
   margin: 0;
