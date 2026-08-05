@@ -74,7 +74,7 @@ body {
 
 .logo img {
   display: block;
-  height: clamp(20px, 3.6vh, 28.875px);
+  height: clamp(26px, 4.68vh, 37.54px);
   width: auto;
 }
 
@@ -105,6 +105,15 @@ body {
 .signup-label {
   font-family: 'Sancy Trial', Georgia, serif;
   font-size: 20px;
+  letter-spacing: 0.4px;
+  color: var(--white);
+  margin: 0;
+}
+
+.signup-subcopy {
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 20px;
+  line-height: 24px;
   letter-spacing: 0.4px;
   color: var(--white);
   margin: 0;
@@ -322,5 +331,94 @@ body {
 
   .panel-right {
     height: 224px;
+  }
+}
+
+/* ---------- Privacy policy page ---------- */
+
+.privacy-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.privacy-sidebar {
+  width: 286px;
+  flex-shrink: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.privacy-content {
+  flex: 1;
+  min-width: 0;
+  padding: 96px 88px;
+  font-family: 'Sancy Trial', Georgia, serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white);
+}
+
+.privacy-content h1 {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 0 4px;
+}
+
+.privacy-content .policy-meta {
+  margin: 0 0 32px;
+}
+
+.privacy-content h2 {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 32px 0 8px;
+}
+
+.privacy-content .policy-subhead {
+  margin: 16px 0 4px;
+}
+
+.privacy-content p {
+  margin: 0 0 16px;
+}
+
+.privacy-content ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.privacy-content li {
+  margin: 0 0 4px;
+}
+
+@media (max-width: 900px) {
+  .privacy-page {
+    flex-direction: column;
+  }
+
+  .privacy-sidebar {
+    display: contents;
+  }
+
+  .privacy-sidebar .logo {
+    order: 1;
+    padding: 24px 24px 0 24px;
+  }
+
+  .privacy-content {
+    order: 2;
+    padding: 32px 24px;
+  }
+
+  .privacy-sidebar .social {
+    order: 3;
+    padding: 0 24px 24px 24px;
   }
 }
